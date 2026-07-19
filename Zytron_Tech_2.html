@@ -3,531 +3,763 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zytron Tech Store</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<title>Zytron Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
+font-family:Poppins,sans-serif;
 scroll-behavior:smooth;
 }
 
 body{
-font-family:'Poppins',sans-serif;
-background:#050505;
-color:white;
-overflow-x:hidden;
-}
-
-body::before{
-content:"";
-position:fixed;
-inset:0;
-background:
-radial-gradient(circle at top left, rgba(0,191,255,0.15), transparent 30%),
-radial-gradient(circle at bottom right, rgba(0,191,255,0.1), transparent 30%);
-z-index:-1;
+background:#f4faff;
+color:#111;
 }
 
 header{
+
 position:fixed;
 top:0;
 width:100%;
-padding:20px 8%;
+padding:18px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(0,0,0,0.7);
-backdrop-filter:blur(10px);
-border-bottom:1px solid rgba(0,191,255,0.15);
+background:rgba(255,255,255,.85);
+backdrop-filter:blur(12px);
+box-shadow:0 3px 15px rgba(0,0,0,.1);
 z-index:1000;
+
 }
 
 .logo{
-font-family:'Orbitron',sans-serif;
-font-size:32px;
-font-weight:800;
-color:#00BFFF;
-letter-spacing:4px;
-text-shadow:0 0 20px rgba(0,191,255,0.8);
+
+font-size:28px;
+font-weight:700;
+color:#007BFF;
+
+}
+
+.logo span{
+
+color:#111;
+
 }
 
 nav a{
-color:white;
+
 text-decoration:none;
-margin-left:25px;
+margin-left:30px;
+color:#222;
 font-weight:500;
 transition:.3s;
+
 }
 
 nav a:hover{
-color:#00BFFF;
+
+color:#2196F3;
+
 }
 
 .hero{
-min-height:100vh;
+
+height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:120px 8%;
-background:
-linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
-url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1400&auto=format&fit=crop') center/cover;
+padding:30px;
+background:linear-gradient(135deg,#007BFF,#00BFFF);
+
+color:white;
+
 }
 
 .hero h1{
-font-family:'Orbitron',sans-serif;
-font-size:90px;
-color:#00BFFF;
-margin-bottom:20px;
-text-shadow:0 0 40px rgba(0,191,255,1);
+
+font-size:60px;
+
 }
 
 .hero p{
-max-width:800px;
-margin:auto;
-font-size:22px;
-line-height:1.8;
-color:#d8d8d8;
+
+margin-top:20px;
+font-size:20px;
+
 }
 
-.btn{
-display:inline-block;
-padding:16px 36px;
-border-radius:14px;
-background:#00BFFF;
-color:black;
-font-weight:700;
-text-decoration:none;
+.hero button{
+
 margin-top:35px;
+padding:15px 35px;
+border:none;
+background:white;
+color:#007BFF;
+border-radius:40px;
+cursor:pointer;
+font-size:17px;
+font-weight:bold;
 transition:.3s;
-box-shadow:0 0 25px rgba(0,191,255,0.4);
+
 }
 
-.btn:hover{
-transform:translateY(-5px);
-box-shadow:0 0 35px rgba(0,191,255,1);
+.hero button:hover{
+
+transform:scale(1.08);
+
 }
 
 section{
-padding:100px 8%;
+
+padding:90px 8%;
+
 }
 
-.title{
-font-size:42px;
-font-family:'Orbitron',sans-serif;
+.titulo{
+
 text-align:center;
-margin-bottom:60px;
-color:#00BFFF;
+font-size:35px;
+margin-bottom:50px;
+
 }
 
-.categories{
+.produtos{
+
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-}
-
-.category{
-background:#111;
-padding:35px;
-border-radius:22px;
-text-align:center;
-border:1px solid rgba(0,191,255,0.15);
-transition:.3s;
-}
-
-.category:hover{
-transform:translateY(-8px);
-box-shadow:0 0 30px rgba(0,191,255,0.2);
-border-color:#00BFFF;
-}
-
-.category h3{
-margin-top:15px;
-font-size:24px;
-color:#00BFFF;
-}
-
-.products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:30px;
+
 }
 
-.product-card{
-background:#111;
-border-radius:22px;
-overflow:hidden;
-border:1px solid rgba(0,191,255,0.15);
-transition:.3s;
-}
+.card{
 
-.product-card:hover{
-transform:translateY(-8px);
-box-shadow:0 0 30px rgba(0,191,255,0.2);
-}
-
-.product-card img{
-width:100%;
-height:240px;
-object-fit:cover;
-}
-
-.product-info{
-padding:25px;
-}
-
-.product-info h3{
-font-size:24px;
-margin-bottom:10px;
-color:#00BFFF;
-}
-
-.product-info p{
-color:#d0d0d0;
-line-height:1.7;
-margin-bottom:18px;
-}
-
-.product-info span{
-font-size:24px;
-font-weight:700;
-}
-
-.ai-box{
-max-width:900px;
-margin:auto;
-background:#111;
-padding:40px;
-border-radius:25px;
-border:1px solid rgba(0,191,255,0.15);
-}
-
-.chat-box{
-height:350px;
-overflow-y:auto;
-background:#0c0c0c;
+background:white;
 border-radius:18px;
+overflow:hidden;
+box-shadow:0 10px 20px rgba(0,0,0,.08);
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.card img{
+
+width:100%;
+height:230px;
+object-fit:cover;
+
+}
+
+.info{
+
 padding:20px;
-margin-bottom:20px;
+
 }
 
-.message{
-padding:14px;
-border-radius:12px;
-margin-bottom:15px;
-max-width:80%;
-line-height:1.6;
+.info h3{
+
+margin-bottom:10px;
+
 }
 
-.user{
-background:#00BFFF;
-color:black;
-margin-left:auto;
-font-weight:600;
+.preco{
+
+margin-top:15px;
+font-size:22px;
+font-weight:bold;
+color:#007BFF;
+
 }
 
-.ai{
-background:#1b1b1b;
-border:1px solid rgba(0,191,255,0.15);
+.antigo{
+
+text-decoration:line-through;
+color:#888;
+font-size:15px;
+
 }
 
-.chat-form{
-display:flex;
-gap:15px;
-}
+.desconto{
 
-.chat-form input{
-flex:1;
-padding:16px;
-border:none;
-border-radius:12px;
-background:#1b1b1b;
+display:inline-block;
+padding:5px 12px;
+background:#007BFF;
 color:white;
-}
-
-.setup-builder{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.setup-card{
-background:#111;
-padding:30px;
 border-radius:20px;
-text-align:center;
+font-size:13px;
+margin-bottom:12px;
+
+}
+
+.info button{
+
+margin-top:18px;
+width:100%;
+padding:12px;
+border:none;
+background:#111;
+color:white;
+border-radius:10px;
+cursor:pointer;
 transition:.3s;
-border:1px solid rgba(0,191,255,0.15);
+
 }
 
-.setup-card:hover{
-transform:scale(1.03);
-box-shadow:0 0 30px rgba(0,191,255,0.2);
+.info button:hover{
+
+background:#007BFF;
+
 }
 
-.setup-card h3{
-color:#00BFFF;
-margin-bottom:15px;
+.contato{
+
+background:#111;
+color:white;
+text-align:center;
+
+}
+
+.contato p{
+
+margin:15px 0;
+
 }
 
 footer{
-padding:30px;
+
+background:#000;
+color:white;
 text-align:center;
-color:#888;
-border-top:1px solid rgba(0,191,255,0.15);
+padding:25px;
+
 }
 
-@media(max-width:768px){
-nav{
-display:none;
-}
-
-.hero h1{
-font-size:58px;
-}
-
-.hero p{
-font-size:18px;
-}
-}
 </style>
+
 </head>
+
 <body>
 
 <header>
-<div class="logo">ZYTRON</div>
+
+<div class="logo">
+Zytron <span>Store</span>
+</div>
 
 <nav>
-<a href="#categorias">Categorias</a>
+
+<a href="#">Início</a>
 <a href="#produtos">Produtos</a>
-<a href="#ia">IA Assistente</a>
-<a href="#setup">Setup Builder</a>
+<a href="#contato">Contato</a>
+
 </nav>
+
 </header>
 
 <section class="hero">
+
 <div>
-<h1>ZYTRON TECH STORE</h1>
-<p>
-A loja virtual futurista da Zytron com produtos tech, setups gamers,
-inteligência artificial e recomendações inteligentes.
-</p>
 
-<a href="#produtos" class="btn">Explorar Produtos</a>
-</div>
-</section>
+<h1>Zytron Store</h1>
 
-<section id="categorias">
-<h2 class="title">Categorias</h2>
+<p>Tecnologia, qualidade e estilo em um só lugar.</p>
 
-<div class="categories">
-
-<div class="category">
-<h3>🎮 Gamer</h3>
-</div>
-
-<div class="category">
-<h3>💻 Programação</h3>
-</div>
-
-<div class="category">
-<h3>✨ RGB Setup</h3>
-</div>
-
-<div class="category">
-<h3>🤖 IA & Tech</h3>
-</div>
+<button onclick="document.getElementById('produtos').scrollIntoView()">
+Ver Produtos
+</button>
 
 </div>
+
 </section>
 
 <section id="produtos">
-<h2 class="title">Produtos em Destaque</h2>
 
-<div class="products">
+<h2 class="titulo">
+Produtos em Oferta
+</h2>
 
-<div class="product-card">
-<img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?q=80&w=1200&auto=format&fit=crop">
-<div class="product-info">
-<h3>Teclado Gamer RGB</h3>
-<p>Teclado mecânico futurista com iluminação RGB premium.</p>
-<span>R$ 249</span>
-<br><br>
-<a class="btn" href="https://www.amazon.com.br/s?k=teclado+gamer+rgb" target="_blank">Amazon</a>
-<a class="btn" href="https://shopee.com.br/search?keyword=teclado%20gamer%20rgb" target="_blank">Shopee</a>
-<a class="btn" href="https://lista.mercadolivre.com.br/teclado-gamer-rgb" target="_blank">Mercado Livre</a>
-</div>
-</div>
+<div class="produtos">
 
-<div class="product-card">
-<img src="https://images.unsplash.com/photo-1547394765-185e1e68f34e?q=80&w=1200&auto=format&fit=crop">
-<div class="product-info">
-<h3>Headset Gamer</h3>
-<p>Áudio imersivo e visual moderno para setup gamer.</p>
-<span>R$ 399</span>
-<br><br>
-<a class="btn" href="https://www.amazon.com.br/s?k=headset+gamer" target="_blank">Amazon</a>
-<a class="btn" href="https://shopee.com.br/search?keyword=headset%20gamer" target="_blank">Shopee</a>
-<a class="btn" href="https://lista.mercadolivre.com.br/headset-gamer" target="_blank">Mercado Livre</a>
-</div>
-</div>
+<div class="card">
 
-<div class="product-card">
-<img src="https://images.unsplash.com/photo-1527814050087-3793815479db?q=80&w=1200&auto=format&fit=crop">
-<div class="product-info">
-<h3>Mouse RGB Pro</h3>
-<p>Alta precisão e design premium futurista.</p>
-<span>R$ 159</span>
-<br><br>
-<a class="btn" href="https://www.amazon.com.br/s?k=mouse+rgb+gamer" target="_blank">Amazon</a>
-<a class="btn" href="https://shopee.com.br/search?keyword=mouse%20rgb" target="_blank">Shopee</a>
-<a class="btn" href="https://lista.mercadolivre.com.br/mouse-rgb-gamer" target="_blank">Mercado Livre</a>
-</div>
-</div>
+<img src="https://http2.mlstatic.com/D_NQ_NP_2X_894677-MLA95731285800_102025-F.webp" alt="">
 
-<div class="product-card">
-<img src="https://images.unsplash.com/photo-1517336714739-489689fd1ca8?q=80&w=1200&auto=format&fit=crop">
-<div class="product-info">
-<h3>Notebook Ultra Tech</h3>
-<p>Notebook premium para produtividade, IA e programação.</p>
-<span>R$ 4.999</span>
-<br><br>
-<a class="btn" href="https://www.amazon.com.br/s?k=notebook+gamer" target="_blank">Amazon</a>
-<a class="btn" href="https://shopee.com.br/search?keyword=notebook%20gamer" target="_blank">Shopee</a>
-<a class="btn" href="https://lista.mercadolivre.com.br/notebook-gamer" target="_blank">Mercado Livre</a>
-</div>
-</div>
+<div class="info">
 
-<div class="product-card">
-<img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=1200&auto=format&fit=crop">
-<div class="product-info">
-<h3>Monitor Ultrawide</h3>
-<p>Tela premium ultrawide para setups futuristas.</p>
-<span>R$ 1.899</span>
-<br><br>
-<a class="btn" href="https://www.amazon.com.br/s?k=monitor+ultrawide" target="_blank">Amazon</a>
-<a class="btn" href="https://shopee.com.br/search?keyword=monitor%20ultrawide" target="_blank">Shopee</a>
-<a class="btn" href="https://lista.mercadolivre.com.br/monitor-ultrawide" target="_blank">Mercado Livre</a>
-</div>
-</div>
+<span class="desconto">
+-32%
+</span>
+  
+<h3>Moto G35 5G Dual SIM 256 GB vermelho 8 GB RAM</h3>
 
-<div class="product-card">
-<img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=1200&auto=format&fit=crop">
-<div class="product-info">
-<h3>LED RGB Setup</h3>
-<p>Iluminação RGB inteligente para deixar seu setup incrível.</p>
-<span>R$ 89</span>
-<br><br>
-<a class="btn" href="https://www.amazon.com.br/s?k=led+rgb+setup" target="_blank">Amazon</a>
-<a class="btn" href="https://shopee.com.br/search?keyword=led%20rgb" target="_blank">Shopee</a>
-<a class="btn" href="https://lista.mercadolivre.com.br/led-rgb" target="_blank">Mercado Livre</a>
-</div>
+<p class="antigo">
+R$ 1.499,90
+</p>
+  
+<p class="preco">
+R$ 1.008
+</p>
+
+  <a href="https://meli.la/1YiYRqo" target="_blank">
+    <button>Comprar</button>
+</a>
+
 </div>
 
 </div>
+
+<div class="card">
+
+<img src="https://http2.mlstatic.com/D_NQ_NP_2X_667869-MLA99578013714_122025-F.webp">
+
+<div class="info">
+
+<span class="desconto">
+-28%
+</span>
+
+<h3>Mouse c/ fio Logitech M90 Preto</h3>
+
+<p class="antigo">
+R$ 39,90
+</p>
+
+<p class="preco">
+R$ 28,71
+</p>
+
+  <a href="https://meli.la/1k9K2Rs" target="_blank">
+    <button>Comprar</button>
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://http2.mlstatic.com/D_NQ_NP_2X_690900-MLB109586501530_042026-F.webp">
+
+<div class="info">
+
+<span class="desconto">
+-30%
+</span>
+
+<h3>Pipoqueira Elétrica Portátil Sem Óleo Fritura Ar Quente</h3>
+
+<p class="antigo">
+R$ 129,90
+</p>
+
+<p class="preco">
+R$ 89,90
+</p>
+
+  <a href="https://meli.la/24dEo2h" target="_blank">
+    <button>Comprar</button>
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://http2.mlstatic.com/D_NQ_NP_2X_842428-MLA109935853722_042026-F.webp">
+
+<div class="info">
+
+<span class="desconto">
+-20%
+</span>
+
+<h3>Guarda Roupa Tonielque Móveis GR Capri 2P/Esp Onix</h3>
+
+<p class="antigo">
+R$ 799
+</p>
+
+<p class="preco">
+R$ 636,31
+</p>
+
+  <a href="https://meli.la/1HXALyb" target="_blank">
+    <button>Comprar</button>
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://http2.mlstatic.com/D_NQ_NP_2X_987853-MLA109863820220_042026-F.webp">
+
+<div class="info">
+
+<span class="desconto">
+-36%
+</span>
+
+<h3>Kit Ferramentas 46 Peças Com Soquetes e Chaves Para Carro e Casa</h3>
+
+<p class="antigo">
+R$ 43,80
+</p>
+
+<p class="preco">
+R$ 27,90
+</p>
+
+  <a href="https://meli.la/2QAJsTf" target="_blank">
+    <button>Comprar</button>
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://http2.mlstatic.com/D_NQ_NP_2X_774328-MLB83148508306_032025-F-criado-mudor-p-cama-box-compacto-c-prateleira-max.webp">
+
+<div class="info">
+
+<span class="desconto">
+-59%
+</span>
+
+<h3>Criado Mudor P/ Cama Box Compacto C/ Prateleira Max</h3>
+
+<p class="antigo">
+R$ 159,90
+</p>
+
+<p class="preco">
+R$ 64,00
+</p>
+
+  <a href="https://meli.la/1zitqdo" target="_blank">
+    <button>Comprar</button>
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://http2.mlstatic.com/D_NQ_NP_2X_782829-MLA110115590659_042026-F.webp">
+
+<div class="info">
+
+<span class="desconto">
+-29%
+</span>
+
+<h3>Fones De Ouvido Bluetooth Kaidi Kd 780 - Som De Qualidade Br Branco</h3>
+
+<p class="antigo">
+R$ 49,99
+</p>
+
+<p class="preco">
+R$ 35,25
+</p>
+
+  <a href="https://meli.la/1nQjYx3" target="_blank">
+    <button>Comprar</button>
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://http2.mlstatic.com/D_NQ_NP_2X_656734-MLA112154661210_062026-F.webp">
+
+<div class="info">
+
+<span class="desconto">
+-44%
+</span>
+
+<h3>Estante Plastica Modular 5 Prateleiras Multiuso Organizadora Preta - Marianopole</h3>
+
+<p class="antigo">
+R$ 90
+</p>
+
+<p class="preco">
+R$ 50
+</p>
+
+  <a href="https://meli.la/2SLYFRV" target="_blank">
+    <button>Comprar</button>
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://http2.mlstatic.com/D_NQ_NP_2X_940280-MLA100083088033_122025-F.webp">
+
+<div class="info">
+
+
+<h3>Kit 3 Bandejas De Bambu Retangular Para Cozinha 20x10cm Peti Lyor Hire</h3>
+
+
+<p class="preco">
+R$ 27,10
+</p>
+
+  <a href="https://meli.la/1eQqwMA" target="_blank">
+    <button>Comprar</button>
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://http2.mlstatic.com/D_NQ_NP_2X_844515-MLA100074452081_122025-F.webp">
+
+<div class="info">
+
+<span class="desconto">
+-50%
+</span>
+
+<h3>Fita LED Neon Flexível 3528 120Led VLX 5 metros Mangueira Corte 2,5cm</h3>
+
+<p class="antigo">
+R$ 58,00
+</p>
+
+<p class="preco">
+R$ 29,00
+</p>
+
+  <a href="https://meli.la/1RCFAXP" target="_blank">
+    <button>Comprar</button>
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://http2.mlstatic.com/D_NQ_NP_2X_801615-MLB91630839367_092025-F.webp">
+
+<div class="info">
+
+<span class="desconto">
+-61%
+</span>
+
+<h3>85cm Escorredor De Louça Pratos Organizador De Pia Cozinha</h3>
+
+<p class="antigo">
+R$ 392,27
+</p>
+
+<p class="preco">
+R$ 152,79
+</p>
+
+  <a href="https://meli.la/18RB5ek" target="_blank">
+    <button>Comprar</button>
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://http2.mlstatic.com/D_NQ_NP_2X_653869-MLA106986107684_022026-F.webp">
+
+<div class="info">
+
+<span class="desconto">
+-39%
+</span>
+
+<h3>Fone Ouvido Bluetooth 5.4 Sem Fio Estojo De Carregamento Anti Ruido A Prova Dagua</h3>
+
+<p class="antigo">
+R$ 78,90
+</p>
+
+<p class="preco">
+R$ 47,45
+</p>
+
+  <a href="https://meli.la/1S5Wnjf" target="_blank">
+    <button>Comprar</button>
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://http2.mlstatic.com/D_NQ_NP_2X_881674-MLA106260237067_012026-F.webp">
+
+<div class="info">
+
+<span class="desconto">
+-46%
+</span>
+
+<h3>Conjunto de panelas antiaderente 10 peças Coffee cappuccino Imperial</h3>
+
+<p class="antigo">
+R$ 331,42
+</p>
+
+<p class="preco">
+R$ 177,29
+</p>
+
+  <a href="https://meli.la/1VSHZSt" target="_blank">
+    <button>Comprar</button>
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://http2.mlstatic.com/D_NQ_NP_2X_674512-MLA79740141129_102024-F.webp">
+
+<div class="info">
+
+<span class="desconto">
+-43%
+</span>
+
+<h3></h3>
+<h3>Caixa De Som Amplificada Philco Pcx7200 Bluetooth-1350w</h3>
+
+<p class="antigo">
+R$ 1.199,00
+</p>
+
+<p class="preco">
+R$ 683,05
+</p>
+
+  <a href="https://meli.la/15gMjjC" target="_blank">
+    <button>Comprar</button>
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://http2.mlstatic.com/D_NQ_NP_2X_875689-MLA107805437119_022026-F.webp">
+
+<div class="info">
+
+<span class="desconto">
+-41%
+</span>
+
+<h3>Smart Tv 32 Philco Roku Tv Dolby Áudio Hdr10 P32crb</h3>
+
+<p class="antigo">
+R$ 1.499,00
+</p>
+
+<p class="preco">
+R$ 879,00
+</p>
+
+  <a href="https://meli.la/2X2vEzB" target="_blank">
+    <button>Comprar</button>
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://http2.mlstatic.com/D_NQ_NP_2X_665279-MLA91956933715_092025-F.webp">
+
+<div class="info">
+
+<span class="desconto">
+-52%
+</span>
+
+<h3>Monitor Portátil Gamer Bettdow de 15.6" Full HD IPS Antirreflexo com Capa</h3>
+
+<p class="antigo">
+R$ 799
+</p>
+
+<p class="preco">
+R$ 378,50
+</p>
+
+  <a href="https://meli.la/2U7rBVX" target="_blank">
+    <button>Comprar</button>
+</a>
+
+</div>
+  
+</div>
+
+</div>
+
 </section>
 
-<section id="ia">
-<h2 class="title">Assistente IA Zytron</h2>
+<section class="contato" id="contato">
 
-<div class="ai-box">
+<h2 class="titulo">
+Contato
+</h2>
 
-<div class="chat-box" id="chatBox">
-<div class="message ai">
-Olá 👋 Sou a IA da Zytron.
-Posso recomendar produtos, setups e tecnologias para você.
-</div>
-</div>
+<p>📧 contato : Zytronempresatech@gmail.com </p>
 
-<div class="chat-form">
-<input type="text" id="userInput" placeholder="Digite algo como: Quero um setup gamer">
-<button class="btn" onclick="sendMessage()">Enviar</button>
-</div>
+<p>📱 (11) 93376-6599 </p>
 
-</div>
-</section>
+<p>📍 São Paulo - Brasil</p>
 
-<section id="setup">
-<h2 class="title">Setup Builder</h2>
-
-<div class="setup-builder">
-
-<div class="setup-card">
-<h3>🎮 Setup Gamer</h3>
-<p>RGB, performance e acessórios gamers.</p>
-<a href="https://www.amazon.com.br" class="btn" target="_blank">Montar</a>
-</div>
-
-<div class="setup-card">
-<h3>💻 Setup Programador</h3>
-<p>Produtividade e conforto para programação.</p>
-<a href="https://www.mercadolivre.com.br" class="btn" target="_blank">Montar</a>
-</div>
-
-<div class="setup-card">
-<h3>✨ Setup Premium</h3>
-<p>Visual futurista e tecnologia avançada.</p>
-<a href="https://shopee.com.br" class="btn" target="_blank">Montar</a>
-</div>
-
-</div>
 </section>
 
 <footer>
-© 2026 Zytron Tech Store | Empresa Tech Futurista
+
+© 2026 Zytron Store • Todos os direitos reservados.
+
 </footer>
 
-<script>
-function sendMessage(){
-
-const input = document.getElementById('userInput');
-const chatBox = document.getElementById('chatBox');
-
-if(input.value.trim() === '') return;
-
-const userMessage = document.createElement('div');
-userMessage.classList.add('message','user');
-userMessage.innerText = input.value;
-chatBox.appendChild(userMessage);
-
-const text = input.value.toLowerCase();
-
-setTimeout(() => {
-
-const aiMessage = document.createElement('div');
-aiMessage.classList.add('message','ai');
-
-let resposta = 'Posso recomendar produtos tech incríveis para você 🚀';
-
-if(text.includes('gamer')){
-resposta = '🎮 Recomendação Zytron: teclado RGB, headset gamer e mouse premium para máxima performance.';
-}
-
-else if(text.includes('programação') || text.includes('programador')){
-resposta = '💻 Recomendação Zytron: notebook rápido, monitor ultrawide e teclado mecânico silencioso.';
-}
-
-else if(text.includes('rgb')){
-resposta = '✨ Recomendação Zytron: LEDs inteligentes, mouse RGB e gabinete futurista.';
-}
-
-else if(text.includes('ia')){
-resposta = '🤖 Recomendação Zytron: gadgets inteligentes, automações e tecnologias futuristas.';
-}
-
-aiMessage.innerText = resposta;
-chatBox.appendChild(aiMessage);
-chatBox.scrollTop = chatBox.scrollHeight;
-
-},700);
-
-input.value='';
-}
-</script>
-
 </body>
+
 </html>
